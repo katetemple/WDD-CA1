@@ -14,7 +14,18 @@ import {
 const app = express();
 
 // Security middleware
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        // Let the page show images from S3 (thumbnails and avatars use presigned S3 URLs)
+        "img-src": ["'self'", "data:", "https://*.amazonaws.com"],
+        // Don't force https, so you can still test the app over http, e.g. http://<server-ip>:3000
+        "upgrade-insecure-requests": null,
+      },
+    },
+  }),
+);
 
 // Only allow the frontend to call the API from a browser
 app.use(cors({ origin: config.CORS_ORIGIN }));
@@ -31,6 +42,12 @@ app.get("/health", async (_req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/storage", storageRoutes);
 app.use("/api/files", filesRoutes);
+
+app.use(express.static("dist"));
+
+app.get("/{*splat}", (req, res) => {
+  res.sendFile("index.html", { root: "dist" });
+});
 
 // Important that this is at the end so that it only handles requests that did not match previous routes
 app.use(unknownEndpoint);
