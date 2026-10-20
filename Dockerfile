@@ -30,4 +30,4 @@ COPY --from=frontend /frontend/dist ./dist
 # Make folder for file uploads and s3 bucket is not set. Owned by the node user.
 RUN mkdir -p uploads && chown node:node uploads
 USER node
-CMD ["node", "server.js"]
+CMD ["node", "src/server.js"]
