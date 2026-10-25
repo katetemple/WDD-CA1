@@ -2,3 +2,4 @@ dist/
 package-lock.json
 # Code copied in by shadcn
 src/components/ui/
+node_modules/

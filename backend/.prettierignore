@@ -2,3 +2,5 @@ uploads/
 package-lock.json
 db/sample-files/
 db/migrations/
+dist/
+node_modules/
