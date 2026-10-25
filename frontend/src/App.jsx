@@ -7,6 +7,7 @@ import AccountPage from "@/pages/AccountPage";
 import NotFoundPage from "@/pages/NotFoundPage";
 
 const testVar = 123;
+console.log(testVar);
 
 // Which page to show for each URL
 export default function App() {
