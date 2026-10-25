@@ -6,7 +6,7 @@ import RegisterPage from "@/pages/RegisterPage";
 import AccountPage from "@/pages/AccountPage";
 import NotFoundPage from "@/pages/NotFoundPage";
 
-const testVar = 123;
+const testVar = 555;
 console.log(testVar);
 
 // Which page to show for each URL
