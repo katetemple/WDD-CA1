@@ -1,3 +1,5 @@
+![Checks](https://github.com/katetemple/WDD-CA1/actions/workflows/checks.yml/badge.svg)
+
 # Dropbox
 
 A file storage web app for storing files in the Cloud. Users can register, log in, and upload, download, rename, star and delete their files.
