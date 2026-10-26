@@ -41,7 +41,7 @@ export default function LoginPage() {
   return (
     <Card className="mx-4 mt-12 max-w-sm sm:mx-auto">
       <CardHeader>
-        <CardTitle>Log in</CardTitle>
+        <CardTitle>Log TF in</CardTitle>
         <CardDescription>Log in to see your files</CardDescription>
       </CardHeader>
       <CardContent>
