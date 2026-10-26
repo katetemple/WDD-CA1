@@ -51,7 +51,7 @@ docker rm -f wdd-ca1 || true
 docker run -d \
   --name wdd-ca1 \
   --restart unless-stopped \
-  -p 80:8000 \
+  -p 80:3000 \
   --env-file /etc/wdd-ca1.env \
   "$IMAGE"
 
